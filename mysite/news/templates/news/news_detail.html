@@ -1,0 +1,12 @@
+<!-- news/templates/news/news_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ news_item.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ news_item.title }}</h1>
+<p><strong>Author:</strong> {{ news_item.author.username }}</p>
+<p><strong>Created at:</strong> {{ news_item.created_at }}</p>
+<p>{{ news_item.content }}</p>
+<a href="{% url 'news_list' %}">Back to News List</a>
+{% endblock %}
